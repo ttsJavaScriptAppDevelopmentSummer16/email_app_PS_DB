@@ -11,7 +11,8 @@ var email = {
       contactType:['work','friend','family'],
       phoneType:['mobile','home','work'],
       priorty:['High','Medium','Low'],
-      status:['Not Started','In Progress','Complete'],
+      taskStatus:['Not Started','In Progress','Complete'],
+      emailStatus:['Not Started','In Progress','Complete'],
       attending:[-1,0,1]
     },
     contacts: {
@@ -28,7 +29,7 @@ var email = {
       task1: {
         priorty: 'Low',
         subject: 'Take out the trash',
-        status: 'Not Started',
+        taskStatus: 'Not Started',
         dueDate:  new Date(2016, 0, 1, 2, 3, 4, 567), //new Date(year, month [, day, hours, minutes, seconds, ms])
         modifiedDate: new Date(2016, 3, 1, 2, 3, 4, 567),
         completedDate: new Date(),
@@ -62,7 +63,7 @@ var email = {
           importance: 'Very',
           read: true,
           category: 'Yellow',
-          status: 'Sent'
+          emailStatus: 'Sent'
         },
         conversationId1: {
           from: 'mom@outlook.com',
@@ -75,7 +76,7 @@ var email = {
           importance: 'Very',
           read: true,
           category: 'Yellow',
-          status: 'Received'
+          emailStatus: 'Received'
         },
         conversationId1: {
           from: 'priyam.sarma@outlook.com',
@@ -88,7 +89,7 @@ var email = {
           importance: 'Very',
           read: true,
           category: 'Yellow',
-          status: 'Sent'
+          emailStatus: 'Sent'
         },
         conversationId2: {
           from: 'priyam.sarma@outlook.com',
@@ -101,7 +102,7 @@ var email = {
           importance: 'Very',
           read: true,
           category: 'Yellow',
-          status: 'Sent'
+          emailStatus: 'Sent'
         }
       },
       deleted: {
@@ -116,7 +117,7 @@ var email = {
           importance: 'Very',
           read: true,
           category: 'Yellow',
-          status: 'Received'
+          emailStatus: 'Received'
         }
       }
     }
