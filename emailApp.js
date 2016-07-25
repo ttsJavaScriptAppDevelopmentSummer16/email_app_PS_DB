@@ -56,41 +56,85 @@ var email = {
           to: 'mom@outlook.com',
           cc: '',
           subject: 'trash?',
+          content: 'What do we do about all this trash?',
+          size: 4000,
+          dateTime: new Date(2016, 0, 1, 2, 3, 4, 567), //new Date(year, month [, day, hours, minutes, seconds, ms])
+          importance: 'Very',
+          read: true,
+          category: 'Yellow',
+          status: 'Sent'
+        },
+        conversationId1: {
+          from: 'mom@outlook.com',
+          to: 'priyam.sarma@outlook.com',
+          cc: '',
+          subject: 'trash?',
           content: 'You clean it out.',
           size: 4000,
           dateTime: new Date(2016, 0, 1, 2, 3, 4, 567), //new Date(year, month [, day, hours, minutes, seconds, ms])
           importance: 'Very',
           read: true,
-          category: 'Yellow'
-        }
-      },
-      sent: {
+          category: 'Yellow',
+          status: 'Received'
+        },
         conversationId1: {
           from: 'priyam.sarma@outlook.com',
           to: 'mom@outlook.com',
           cc: '',
           subject: 'trash?',
-          content: 'What do we do about all this trash?',
-          size: 5000,
+          content: 'No I will not',
+          size: 4000,
           dateTime: new Date(2016, 0, 1, 2, 3, 4, 567), //new Date(year, month [, day, hours, minutes, seconds, ms])
           importance: 'Very',
           read: true,
-          category: 'Yellow'
+          category: 'Yellow',
+          status: 'Sent'
+        },
+        conversationId2: {
+          from: 'priyam.sarma@outlook.com',
+          to: 'mom@outlook.com',
+          cc: '',
+          subject: 'Whats up with dad',
+          content: 'Is He serious',
+          size: 4000,
+          dateTime: new Date(2016, 0, 1, 2, 3, 4, 567), //new Date(year, month [, day, hours, minutes, seconds, ms])
+          importance: 'Very',
+          read: true,
+          category: 'Yellow',
+          status: 'Sent'
         }
       },
       deleted: {
-        conversationId1: {
-          from: 'everyon.else@outlook.com',
+        conversationId3: {
+          from: 'everyone.else@outlook.com',
           to: 'priyam.sarma@outlook.com',
           cc: '',
-          subject: 'Spm Much',
-          content: 'Click on this tasy spam',
+          subject: 'Spam Much',
+          content: 'Click on this tasty spam',
           size: 2000,
           dateTime: new Date(2016, 0, 1, 2, 3, 4, 567), //new Date(year, month [, day, hours, minutes, seconds, ms])
           importance: 'Very',
           read: true,
-          category: 'Yellow'
+          category: 'Yellow',
+          status: 'Received'
         }
       }
     }
   }
+
+//  Get a list of inbox names
+console.log(Object.keys(email.mailBoxes))
+//  Get a list of emails
+inboxNames = Object.keys(email.mailBoxes)
+emails = []
+for (var i = 0; i < inboxNames.length; i++) {
+  convo = Object.keys(email.mailBoxes[inboxNames[i]])
+//  console.log(convo)
+  for (var j = 0; j < convo.length; j++) {
+    emails.push(email.mailBoxes[inboxNames[i]][convo[j]])
+  }
+}
+console.log(emails)
+//  Get the text of the second email in the visible list
+//  Mark an email as sent
+//  Add a draft email to the drafts mailbox
